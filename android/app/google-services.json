@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "748081709292",
+    "project_id": "ureeka-training-final",
+    "storage_bucket": "ureeka-training-final.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748081709292:android:a14f1b183bd3a1d4f465c9",
+        "android_client_info": {
+          "package_name": "com.example.ureeka_training_final_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTrt8jCCFVjcXGsADPvul2a-SPuRczMXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
