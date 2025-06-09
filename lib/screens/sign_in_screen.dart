@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../services/auth_service.dart';
+import 'package:provider/provider.dart';
+import '../providers/AuthProvider.dart';
 
 class SignInScreen extends StatefulWidget {
-  final AuthService authService;
-  const SignInScreen({super.key, required this.authService});
+  const SignInScreen({super.key});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -17,10 +17,8 @@ class _SignInScreenState extends State<SignInScreen> {
   Future<void> _signIn() async {
     setState(() => _error = null);
     try {
-      await widget.authService.signIn(
-        _emailController.text.trim(),
-        _passwordController.text.trim(),
-      );
+      await Provider.of<AuthProvider>(context, listen: false).signIn(
+          _emailController.text.trim(), _passwordController.text.trim());
     } on Exception catch (e) {
       setState(() => _error = e.toString());
     }
@@ -29,10 +27,8 @@ class _SignInScreenState extends State<SignInScreen> {
   Future<void> _register() async {
     setState(() => _error = null);
     try {
-      await widget.authService.register(
-        _emailController.text.trim(),
-        _passwordController.text.trim(),
-      );
+      await Provider.of<AuthProvider>(context, listen: false).register(
+          _emailController.text.trim(), _passwordController.text.trim());
     } on Exception catch (e) {
       setState(() => _error = e.toString());
     }

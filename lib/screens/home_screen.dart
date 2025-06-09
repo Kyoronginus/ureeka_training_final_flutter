@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../services/auth_service.dart';
+import 'package:provider/provider.dart';
+import '../providers/AuthProvider.dart';
 
 class HomeScreen extends StatelessWidget {
-  final AuthService authService;
-  const HomeScreen({super.key, required this.authService});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,8 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
-            onPressed: () => authService.signOut(),
+            onPressed: () =>
+                Provider.of<AuthProvider>(context, listen: false).signOut(),
           ),
         ],
       ),
